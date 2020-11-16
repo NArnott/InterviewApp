@@ -22,6 +22,8 @@ namespace MyService
             services.AddControllers();
             services.AddSwaggerGen();
 
+            services.AddCors(x => x.AddDefaultPolicy(b => b.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
+
             services.AddSingleton<AddressStore>();
         }
 
@@ -42,6 +44,7 @@ namespace MyService
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors();
 
             app.UseEndpoints(endpoints =>
             {

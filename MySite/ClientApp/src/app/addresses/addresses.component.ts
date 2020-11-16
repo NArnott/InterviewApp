@@ -12,3 +12,11 @@ export class AddressesComponent implements OnInit {
   }
 
 }
+
+export interface Address {
+  addressId: number;
+  streetAddress: string;
+  city: string;
+  state: string;
+  zip: string;
+}
