@@ -21,4 +21,5 @@ work before moving on.
 The model for an Address is defined in addresses.component.ts. You are responsible for developing the UI and TS 
 code for making the HTTP call to the backend to get the list of addresses.
 
-3. Add the ability to create a new Address in the UI and wire it up to the backend API.
+3. Add the ability to create a new Address in the UI and wire it up to the backend API. Make sure to refresh the 
+Address list after you add a new address.
