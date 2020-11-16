@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MyService.Stores;
+using System.Threading.Tasks;
 
 namespace MyService.Controllers
 {
@@ -21,9 +18,27 @@ namespace MyService.Controllers
             _store = store;
         }
 
-        //TODO: Implement APIs for the following AddressStore Methods:
-        //_store.GetAddressesAsync
-        //_store.GetAddressByIdAsync (Must return 404-Not Found if that id doesn't exist.
-        //_store.AddAddressAsync 
+        [HttpGet]
+        public Task<Address[]> GetAddressesAsync()
+        {
+            return _store.GetAddressesAsync();
+        }
+
+        [HttpGet("{addressId}")]
+        public async Task<ActionResult<Address>> GetAddressByIdAsync(int addressId)
+        {
+            var address = await _store.GetAddressByIdAsync(addressId);
+
+            if (address == null)
+                return NotFound();
+
+            return address;
+        }
+
+        [HttpPost]
+        public Task AddAddressAsync(Address address)
+        {
+            return _store.AddAddressAsync(address);
+        }
     }
 }
