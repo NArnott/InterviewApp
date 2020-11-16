@@ -23,7 +23,7 @@ namespace MyService.Controllers
 
         //TODO: Implement APIs for the following AddressStore Methods:
         //_store.GetAddressesAsync
-        //_store.GetAddressByIdAsync 
+        //_store.GetAddressByIdAsync (Must return 404-Not Found if that id doesn't exist.
         //_store.AddAddressAsync 
     }
 }
