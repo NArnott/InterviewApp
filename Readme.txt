@@ -8,6 +8,14 @@ within the MySite project.
 Note that we've integrated MyService with swagger so you can test your APIs without the need for an external
 test tool (such as Postman), just by running the project
 
+MySite has a couple existing components you can use as a reference:
+* CounterComponent - Simple UI the increments a counter by clicking a button
+* FetchDataComponent - Displays a table of weather data that is pulled using an HttpClient call.
+
+You are allowed to use your favorite search engine to look up various syntax and examples if needed.
+
+When you are ready to test, just hit F5 to run both projects. Do NOT use the command line.
+
 For your reference, the backend host URI is https://localhost:44378.
 
 
