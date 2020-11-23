@@ -2,7 +2,7 @@ Description:
 This solution is made up of two projects: MyService and MySite. MyService is an AspNetCore API service. MySite is 
 an AspNetCore Website, implemented using Angular v8.
 
-You will need to implement the API layer within MyService, and then wire up those APIs in the Angular site 
+You will need to implement a *Users* API within MyService, and then wire up those APIs in the Angular site 
 within the MySite project. 
 
 Note that we've integrated MyService with swagger so you can test your APIs without the need for an external
@@ -21,13 +21,13 @@ For your reference, the backend host URI is https://localhost:44378.
 
 Actions:
 
-1. Implement the API. Open MyService\Controllers\AddressController.cs and review the TODO comments.  You need 
-to implement three API Actions for the specified AddressStore methods. Make sure to test that your three APIs 
+1. Implement the API. Open MyService\Controllers\UserController.cs and review the TODO comments.  You need 
+to implement three API Actions for the specified UserStore methods. Make sure to test that your three APIs 
 work before moving on.
 
-2. Display the list of Addresses. Work with the AddressesComponent found in MySite\ClientApp\src\app\addresses\. 
-The model for an Address is defined in addresses.component.ts. You are responsible for developing the UI and TS 
-code for making the HTTP call to the backend to get the list of addresses.
+2. Display the list of Users. Work with the UsersComponent found in MySite\ClientApp\src\app\users\. 
+The model for an User is defined in users.component.ts. You are responsible for developing the UI and TS 
+code for making the HTTP call to the backend to get the list of users.
 
-3. Add the ability to create a new Address in the UI and wire it up to the backend API. Make sure to refresh the 
-Address list after you add a new address.
+3. Add the ability to create a new User in the UI and wire it up to the backend API. Make sure to refresh the 
+User list after you add a new user.

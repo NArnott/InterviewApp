@@ -24,7 +24,7 @@ namespace MyService
 
             services.AddCors(x => x.AddDefaultPolicy(b => b.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
 
-            services.AddSingleton<AddressStore>();
+            services.AddSingleton<UserStore>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
