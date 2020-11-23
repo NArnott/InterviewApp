@@ -24,19 +24,19 @@ namespace MyService.Controllers
             return _store.GetUsersAsync();
         }
 
-        [HttpGet("{addressId}")]
-        public async Task<ActionResult<User>> GetAddressByIdAsync(int userId)
+        [HttpGet("{userId}")]
+        public async Task<ActionResult<User>> GetUserByIdAsync(int userId)
         {
-            var address = await _store.GetUserByIdAsync(userId);
+            var user = await _store.GetUserByIdAsync(userId);
 
-            if (address == null)
+            if (user == null)
                 return NotFound();
 
-            return address;
+            return user;
         }
 
         [HttpPost]
-        public Task AddAddressAsync(User user)
+        public Task AddUserAsync(User user)
         {
             return _store.AddUserAsync(user);
         }
