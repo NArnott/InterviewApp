@@ -1,3 +1,23 @@
-<h1>Users</h1>
+<h1>Users <button class="btn btn-secondary" (click)="toggleNewUser()">New</button></h1>
 
-<p>TODO: Implement Users API</p>
+<div *ngIf="newUser" style="margin: 10px">
+  <h2>New User</h2>
+
+  <p>Name: <input type="text" [(ngModel)]="newUser.username" /></p>
+  <p>Email: <input type="text" [(ngModel)]="newUser.emailAddress" /></p>
+
+  <button class="btn btn-primary" (click)="addNewUser()">Create New User</button>
+</div>
+
+<table class="table" *ngIf="users">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Email</th>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>{{user.userId}}</td>
+    <td>{{user.username}}</td>
+    <td>{{user.emailAddress}}</td>
+  </tr>
+</table>

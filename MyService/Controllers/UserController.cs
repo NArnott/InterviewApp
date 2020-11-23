@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MyService.Stores;
+using System.Threading.Tasks;
 
 namespace MyService.Controllers
 {
@@ -21,9 +18,27 @@ namespace MyService.Controllers
             _store = store;
         }
 
-        //TODO: Implement APIs for the following UserStore Methods:
-        //_store.GetUsersAsync
-        //_store.GetUserByIdAsync (Must return 404-Not Found if that id doesn't exist.
-        //_store.AddUserAsync 
+        [HttpGet]
+        public Task<User[]> GetUsersAsync()
+        {
+            return _store.GetUsersAsync();
+        }
+
+        [HttpGet("{addressId}")]
+        public async Task<ActionResult<User>> GetAddressByIdAsync(int userId)
+        {
+            var address = await _store.GetUserByIdAsync(userId);
+
+            if (address == null)
+                return NotFound();
+
+            return address;
+        }
+
+        [HttpPost]
+        public Task AddAddressAsync(User user)
+        {
+            return _store.AddUserAsync(user);
+        }
     }
 }
